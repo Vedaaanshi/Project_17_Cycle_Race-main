@@ -142,11 +142,12 @@ function draw() {
     redCG.setLifetimeEach(-1);
 
     //write condition for calling reset( )
-     if(keyDown("up")){
+     if(keyDown("UP_ARROW")){
        reset();
      }
   }
 }
+
 
 function pinkCyclists() {
   player1 = createSprite(1100, Math.round(random(50, 250)));
@@ -177,24 +178,11 @@ function redCyclists() {
 
 //create reset function here
 function reset() {
-  //text("Inside Reset ...", 200, 200);
-  //gameState = PLAY;
-  //gameOver.visible = false;
-  //mainCyclist = addAnimation("SahilRunning", mainRacerImg1);
-
-  pinkCG.destoyEach();
-  yellowCG.destoyEach();
-  redCG.destoyEach();
+  gameState = PLAY;
+  gameOver.visible = false;
+  mainCyclist.addAnimation("SahilRunning", mainRacerImg1);
+  pinkCG.destroyEach();
+  yellowCG.destroyEach();
+  redCG.destroyEach();
   distance = 0;
-  
-  //gameState = PLAY;
-  //gameOver.visible = false;
-  //mainCyclist = addAnimation("SahilRunning", mainRacerImg1);
-
-  setup();
 }
-
-
-
-
-
